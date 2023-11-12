@@ -1,0 +1,27 @@
+FROM node:latest
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm install
+
+RUN mv .env.local .env
+
+RUN npx prisma generate
+
+RUN npx prisma migrate dev
+
+RUN cd client
+
+RUN npm install
+
+RUN cd ..
+
+RUN npm run dev
+
+EXPOSE 8000
