@@ -8,7 +8,7 @@ jobs:
     runs-on: [self-hosted]
     steps:
       - name: checkout
-        uses: actions/chckout@v2
+        uses: actions/checkout@v2
       - name: Create Image
         run: sudo -u larry docker build -t webtest:1.0 -f dockerfile0 .
       - name: Start
