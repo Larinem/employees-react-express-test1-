@@ -13,6 +13,8 @@ RUN npm install
 # Копируем оставшееся приложение в контейнер
 COPY . .
 
+RUN mv .env.local .env
+
 # Устанавливаем Prisma
 RUN npm install prisma
 
