@@ -1,5 +1,5 @@
 # Используем образ дистрибутив линукс Alpine с версией Node -14 Node.js
-FROM node:lasted
+FROM node:20.9.0
 
 # Указываем нашу рабочую дерикторию
 WORKDIR /app
