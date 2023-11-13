@@ -30,6 +30,8 @@ COPY prisma/schema.prisma ./prisma/
 # Переходим в директорию /app/client
 WORKDIR /app/client
 
+RUN npm install
+
 # Собираем клиентскую часть приложения
 RUN npm run build
 
