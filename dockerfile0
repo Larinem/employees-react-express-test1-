@@ -8,7 +8,11 @@ RUN npm install
 
 COPY . .
 
+WORKDIR /app/client
+
 RUN npm install
+
+WORKDIR /app
 
 RUN mv .env.local .env
 
@@ -16,12 +20,16 @@ RUN npx prisma generate
 
 RUN npx prisma migrate dev
 
-RUN cd client
+COPY prisma/schema.prisma ./prisma/
 
-RUN npm install
+RUN /app/client
 
-RUN cd ..
+RUN npm run build
 
-CMD [ "npm", "start" ]
+RUN /app
+
+ENV NODE_ENV=production
 
 EXPOSE 8000
+
+CMD [ "npm", "start" ]
