@@ -24,7 +24,7 @@ COPY prisma/schema.prisma ./prisma/
 
 WORKDIR /app/client
 
-RUN npm run start
+RUN npm run test
 
 WORKDIR /app
 
