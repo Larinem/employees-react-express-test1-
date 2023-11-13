@@ -26,9 +26,9 @@ WORKDIR /app/client
 
 RUN npm run start
 
-WORKDIR /app
+# WORKDIR /app
 
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 
 EXPOSE 8000
 
