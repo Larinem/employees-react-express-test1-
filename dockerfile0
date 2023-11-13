@@ -22,7 +22,7 @@ RUN npx prisma migrate dev
 
 COPY prisma/schema.prisma ./prisma/
 
-RUN /app/client
+WORKDIR /app/client
 
 RUN npm run build
 
