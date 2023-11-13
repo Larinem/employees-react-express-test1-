@@ -12,4 +12,4 @@ jobs:
       - name: Create Image
         run: sudo -u larry docker build -t webtest:1.0 -f dockerfile0 .
       - name: Start
-        run: sudo -u larry docker run -d -p 8000:8000 webtest:1.0
+        run: sudo -u larry docker run -d -p 8000:8000 -p 3000:3000 webtest:1.0
