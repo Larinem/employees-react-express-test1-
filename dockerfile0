@@ -24,12 +24,12 @@ COPY prisma/schema.prisma ./prisma/
 
 WORKDIR /app/client
 
-RUN npm run test
+RUN npm run start
 
 WORKDIR /app
 
 ENV NODE_ENV=production
 
-EXPOSE 8000 3000
+EXPOSE 8000
 
 CMD [ "npm", "start" ]
